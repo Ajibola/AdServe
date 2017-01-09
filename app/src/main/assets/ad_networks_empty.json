@@ -1,0 +1,460 @@
+{
+  "ad_networks": [
+    {
+      "ad_network": "Ampiri",
+      "enabled": true,
+      "library_class_name": "com.ampiri.sdk.Ampiri",
+      "api_key": ""
+    },
+    {
+      "ad_network": "Facebook",
+      "enabled": true,
+      "library_class_name": "com.facebook.ads.AdNetwork",
+      "api_key": ""
+    },
+    {
+      "ad_network": "Flurry",
+      "enabled": true,
+      "library_class_name": "com.flurry.android.FlurryAgent",
+      "api_key": ""
+    },
+    {
+      "ad_network": "Google",
+      "enabled": true,
+      "library_class_name": "com.google.android.gms.ads.MobileAds",
+      "api_key": ""
+    },
+    {
+      "ad_network": "AerServ",
+      "enabled": true,
+      "library_class_name": "com.aerserv.sdk.AerServSdk",
+      "api_key": ""
+    },
+    {
+      "ad_network": "InMobi",
+      "enabled": true,
+      "library_class_name": "com.inmobi.sdk.InMobiSdk",
+      "api_key": ""
+    },
+    {
+      "ad_network": "Fyber",
+      "enabled": true,
+      "library_class_name": "com.fyber.Fyber",
+      "api_key": ""
+    },
+    {
+      "ad_network": "Heyzap",
+      "enabled": true,
+      "library_class_name": "com.heyzap.sdk.ads.HeyzapAds",
+      "api_key": ""
+    },
+    {
+      "ad_network": "Mopub",
+      "enabled": true,
+      "library_class_name": "com.mopub.mobileads.MoPubView",
+      "api_key": ""
+    },
+    {
+      "ad_network": "Ogury",
+      "enabled": true,
+      "library_class_name": "io.presage.Presage",
+      "api_key": ""
+    },
+    {
+      "ad_network": "AppLovin",
+      "enabled": true,
+      "library_class_name": "com.applovin.sdk.AppLovinSdk",
+      "api_key": ""
+    },
+    {
+      "ad_network": "Adcolony",
+      "enabled": true,
+      "library_class_name": "com.adcolony.sdk.AdColony",
+      "api_key": "",
+      "ad_unit_id": ""
+    },
+    {
+      "ad_network": "IronSource",
+      "enabled": true,
+      "library_class_name": "com.supersonic.mediationsdk.sdk.Supersonic",
+      "api_key": ""
+    },
+    {
+      "ad_network": "StartApp",
+      "enabled": true,
+      "library_class_name": "com.startapp.android.publish.adsCommon.StartAppSDK",
+      "api_key": ""
+    },
+    {
+      "ad_network": "Avocarrot",
+      "enabled": true,
+      "library_class_name": "com.avocarrot.androidsdk.AvocarrotCustom",
+      "api_key": ""
+    },
+    {
+      "ad_network": "Vungle",
+      "enabled": true,
+      "library_class_name": "com.vungle.publisher.VunglePub",
+      "api_key": ""
+    },
+    {
+      "ad_network": "Revmob",
+      "enabled": true,
+      "library_class_name": "com.revmob.RevMob",
+      "api_key": ""
+    },
+    {
+      "ad_network": "Loopme",
+      "enabled": true,
+      "library_class_name": "com.loopme.LoopMeInterstitial",
+      "api_key": ""
+    }
+  ],
+  "banner_ads": [
+    {
+      "enabled": true,
+      "priority": 4,
+      "ad_network": "Ampiri",
+      "library_class_name": "com.ampiri.sdk.Ampiri",
+      "class_name": "net.texsoftware.adservelibrary.ads.banner.BannerAmpiri",
+      "ad_unit_id": "",
+      "ad_size": "com.ampiri.sdk.mediation.BannerSize.BANNER_SIZE_320x50"
+    },
+    {
+      "enabled": true,
+      "priority": 0,
+      "ad_network": "InMobi",
+      "library_class_name": "com.inmobi.sdk.InMobiSdk",
+      "class_name": "net.texsoftware.adservelibrary.ads.banner.BannerInMobi",
+      "ad_unit_id": ""
+    },
+    {
+      "enabled": true,
+      "priority": 1,
+      "ad_network": "Facebook",
+      "library_class_name": "com.facebook.ads.AdNetwork",
+      "class_name": "net.texsoftware.adservelibrary.ads.banner.BannerFacebook",
+      "ad_unit_id": "",
+      "ad_size": "com.facebook.ads.AdSize.BANNER_HEIGHT_50"
+    },
+    {
+      "enabled": true,
+      "priority": 2,
+      "ad_network": "Flurry",
+      "library_class_name": "com.flurry.android.FlurryAgent",
+      "class_name": "net.texsoftware.adservelibrary.ads.banner.BannerFlurry",
+      "ad_unit_id": ""
+    },
+    {
+      "enabled": true,
+      "priority": 3,
+      "ad_network": "AerServ",
+      "library_class_name": "com.aerserv.sdk.AerServSdk",
+      "class_name": "net.texsoftware.adservelibrary.ads.banner.BannerAerserv",
+      "ad_unit_id": ""
+    },
+    {
+      "enabled": true,
+      "priority": 4,
+      "ad_network": "InMobi",
+      "library_class_name": "com.inmobi.sdk.InMobiSdk",
+      "class_name": "net.texsoftware.adservelibrary.ads.banner.BannerInMobi",
+      "ad_unit_id": ""
+    },
+    {
+      "enabled": true,
+      "priority": 6,
+      "ad_network": "Mopub",
+      "library_class_name": "com.mopub.mobileads.MoPubView",
+      "class_name": "net.texsoftware.adservelibrary.ads.banner.BannerMopub",
+      "ad_unit_id": ""
+    },
+    {
+      "enabled": true,
+      "priority": 6,
+      "ad_network": "Google NativeExpress",
+      "library_class_name": "com.google.android.gms.ads.MobileAds",
+      "class_name": "net.texsoftware.adservelibrary.ads.banner.NativeExGoogle",
+      "ad_unit_id": ""
+    },
+    {
+      "enabled": true,
+      "priority": 7,
+      "ad_network": "Google",
+      "library_class_name": "com.google.android.gms.ads.MobileAds",
+      "class_name": "net.texsoftware.adservelibrary.ads.banner.BannerGoogle",
+      "ad_unit_id": "",
+      "ad_size": "com.google.android.gms.ads.AdSize.BANNER"
+    }
+  ],
+  "interstitial_ads": [
+    {
+      "enabled": true,
+      "priority": 5,
+      "ad_network": "Ampiri",
+      "library_class_name": "com.ampiri.sdk.Ampiri",
+      "class_name": "net.texsoftware.adservelibrary.ads.interstitial.InterstitialAmpiri",
+      "ad_unit_id": ""
+    },
+    {
+      "enabled": true,
+      "priority": 0,
+      "ad_network": "StartApp",
+      "library_class_name": "com.startapp.android.publish.adsCommon.StartAppSDK",
+      "class_name": "net.texsoftware.adservelibrary.ads.interstitial.InterstitialStartapp"
+    },
+    {
+      "enabled": true,
+      "priority": 0,
+      "ad_network": "Avocarrot",
+      "library_class_name": "com.avocarrot.androidsdk.AvocarrotCustom",
+      "class_name": "net.texsoftware.adservelibrary.ads.interstitial.InterstitialAvocarrot",
+      "api_key": "",
+      "ad_unit_id": ""
+    },
+    {
+      "enabled": true,
+      "priority": 0,
+      "ad_network": "Ogury",
+      "library_class_name": "io.presage.Presage",
+      "class_name": "net.texsoftware.adservelibrary.ads.interstitial.InterstitialOgury",
+      "ad_unit_id": ""
+    },
+    {
+      "enabled": true,
+      "priority": 1,
+      "ad_network": "Facebook",
+      "library_class_name": "com.facebook.ads.AdNetwork",
+      "class_name": "net.texsoftware.adservelibrary.ads.interstitial.InterstitialFacebook",
+      "ad_unit_id": ""
+    },
+    {
+      "enabled": true,
+      "priority": 2,
+      "ad_network": "Flurry",
+      "library_class_name": "com.flurry.android.FlurryAgent",
+      "class_name": "net.texsoftware.adservelibrary.ads.interstitial.InterstitialFlurry",
+      "ad_unit_id": ""
+    },
+    {
+      "enabled": true,
+      "priority": 4,
+      "ad_network": "Aerserv",
+      "library_class_name": "com.aerserv.sdk.AerServSdk",
+      "class_name": "net.texsoftware.adservelibrary.ads.interstitial.InterstitialAerserv",
+      "ad_unit_id": ""
+    },
+    {
+      "enabled": true,
+      "priority": 6,
+      "ad_network": "Google",
+      "library_class_name": "com.google.android.gms.ads.MobileAds",
+      "class_name": "net.texsoftware.adservelibrary.ads.interstitial.InterstitialGoogle",
+      "ad_unit_id": ""
+    },
+    {
+      "enabled": true,
+      "priority": 0,
+      "ad_network": "InMobi",
+      "library_class_name": "com.inmobi.sdk.InMobiSdk",
+      "class_name": "net.texsoftware.adservelibrary.ads.interstitial.InterstitialInMobi",
+      "ad_unit_id": ""
+    },
+    {
+      "enabled": true,
+      "priority": 0,
+      "ad_network": "Mopub",
+      "library_class_name": "com.mopub.mobileads.MoPubView",
+      "class_name": "net.texsoftware.adservelibrary.ads.interstitial.InterstitialMopub",
+      "ad_unit_id": ""
+    },
+    {
+      "enabled": true,
+      "priority": 0,
+      "ad_network": "Heyzap",
+      "library_class_name": "com.heyzap.sdk.ads.HeyzapAds",
+      "class_name": "net.texsoftware.adservelibrary.ads.interstitial.InterstitialHeyzap",
+      "ad_unit_id": ""
+    }
+  ],
+  "video_interstitial_ads": [
+    {
+      "enabled": true,
+      "priority": 1,
+      "ad_network": "AdColony",
+      "library_class_name": "com.adcolony.sdk.AdColony",
+      "class_name": "net.texsoftware.adservelibrary.ads.video.VideoInterstitialAdcolony",
+      "ad_unit_id": ""
+    },
+    {
+      "enabled": true,
+      "priority": 0,
+      "ad_network": "Loopme",
+      "library_class_name": "com.loopme.LoopMeInterstitial",
+      "class_name": "net.texsoftware.adservelibrary.ads.video.VideoInterstitialLoopMe",
+      "ad_unit_id": ""
+    },
+    {
+      "enabled": true,
+      "priority": 0,
+      "ad_network": "Vungle",
+      "library_class_name": "com.vungle.publisher.VunglePub",
+      "class_name": "net.texsoftware.adservelibrary.ads.video.VideoInterstitialVungle",
+      "ad_unit_id": ""
+    },
+    {
+      "enabled": true,
+      "priority": 0,
+      "ad_network": "AppLovin",
+      "library_class_name": "com.applovin.sdk.AppLovinSdk",
+      "class_name": "net.texsoftware.adservelibrary.ads.video.VideoInterstitialAppLovin",
+      "ad_unit_id": ""
+    },
+    {
+      "enabled": true,
+      "priority": 0,
+      "ad_network": "Revmob",
+      "library_class_name": "com.revmob.RevMob",
+      "class_name": "net.texsoftware.adservelibrary.ads.video.VideoInterstitialRevmob",
+      "ad_unit_id": ""
+    },
+    {
+      "enabled": true,
+      "priority": 0,
+      "ad_network": "IronSource",
+      "library_class_name": "com.supersonic.mediationsdk.sdk.Supersonic",
+      "class_name": "net.texsoftware.adservelibrary.ads.video.VideoInterstitialIronSource",
+      "api_key": "",
+      "ad_unit_id": ""
+    },
+    {
+      "enabled": true,
+      "priority": 0,
+      "ad_network": "StartApp",
+      "library_class_name": "com.startapp.android.publish.adsCommon.StartAppSDK",
+      "class_name": "net.texsoftware.adservelibrary.ads.video.VideoInterstitialStartapp"
+    },
+    {
+      "enabled": true,
+      "priority": 2,
+      "ad_network": "Aerserv",
+      "library_class_name": "com.aerserv.sdk.AerServSdk",
+      "class_name": "net.texsoftware.adservelibrary.ads.video.VideoInterstitialAerserve",
+      "ad_unit_id": ""
+    },
+    {
+      "enabled": true,
+      "priority": 3,
+      "ad_network": "Google",
+      "library_class_name": "com.google.android.gms.ads.MobileAds",
+      "class_name": "net.texsoftware.adservelibrary.ads.video.VideoInterstitialGoogle",
+      "ad_unit_id": ""
+    },
+    {
+      "enabled": true,
+      "priority": 5,
+      "ad_network": "Flurry",
+      "library_class_name": "com.flurry.android.FlurryAgent",
+      "class_name": "net.texsoftware.adservelibrary.ads.video.VideoInterstitialFlurry",
+      "ad_unit_id": ""
+    },
+    {
+      "enabled": true,
+      "priority": 0,
+      "ad_network": "InMobi",
+      "library_class_name": "com.inmobi.sdk.InMobiSdk",
+      "class_name": "net.texsoftware.adservelibrary.ads.video.VideoInterstitialInMobi",
+      "ad_unit_id": ""
+    },
+    {
+      "enabled": true,
+      "priority": 0,
+      "ad_network": "Fyber",
+      "library_class_name": "com.fyber.Fyber",
+      "class_name": "net.texsoftware.adservelibrary.ads.video.VideoInterstitialFyber",
+      "ad_unit_id": ""
+    },
+    {
+      "enabled": true,
+      "priority": 0,
+      "ad_network": "Mopub",
+      "library_class_name": "com.mopub.mobileads.MoPubView",
+      "class_name": "net.texsoftware.adservelibrary.ads.video.VideoInterstitialMopub",
+      "ad_unit_id": ""
+    },
+    {
+      "enabled": true,
+      "priority": 0,
+      "ad_network": "Heyzap",
+      "library_class_name": "com.heyzap.sdk.ads.HeyzapAds",
+      "class_name": "net.texsoftware.adservelibrary.ads.video.VideoInterstitialHeyzap",
+      "ad_unit_id": ""
+    }
+  ],
+  "native_ads": [
+    {
+      "enabled": true,
+      "priority": 2,
+      "ad_network": "Facebook",
+      "library_class_name": "com.facebook.ads.AdNetwork",
+      "class_name": "net.texsoftware.adservelibrary.ads.nativ.NativeAdFacebook",
+      "ad_unit_id": ""
+    },
+    {
+      "enabled": true,
+      "priority": 0,
+      "ad_network": "Ampiri",
+      "library_class_name": "com.ampiri.sdk.Ampiri",
+      "class_name": "net.texsoftware.adservelibrary.ads.nativ.NativeAdAmpiri",
+      "ad_unit_id": ""
+    },
+    {
+      "enabled": true,
+      "priority": 0,
+      "ad_network": "Mopub",
+      "library_class_name": "com.mopub.mobileads.MoPubView",
+      "class_name": "net.texsoftware.adservelibrary.ads.nativ.NativeAdMopub",
+      "ad_unit_id": ""
+    },
+    {
+      "enabled": true,
+      "priority": 0,
+      "ad_network": "Google",
+      "library_class_name": "com.google.android.gms.ads.NativeExpressAdView",
+      "class_name": "net.texsoftware.adservelibrary.ads.nativ.NativeAdExGoogle",
+      "ad_unit_id": ""
+    },
+    {
+      "enabled": true,
+      "priority": 0,
+      "ad_network": "StartApp",
+      "library_class_name": "com.startapp.android.publish.adsCommon.StartAppSDK",
+      "class_name": "net.texsoftware.adservelibrary.ads.nativ.NativeAdStartapp"
+    },
+    {
+      "enabled": true,
+      "priority": 5,
+      "ad_network": "Flurry",
+      "library_class_name": "com.flurry.android.FlurryAgent",
+      "class_name": "net.texsoftware.adservelibrary.ads.nativ.NativeAdFlurry",
+      "ad_unit_id": ""
+    },
+    {
+      "enabled": true,
+      "priority": 0,
+      "ad_network": "Avocarrot",
+      "library_class_name": "com.avocarrot.androidsdk.AvocarrotCustom",
+      "class_name": "net.texsoftware.adservelibrary.ads.nativ.NativeAdAvocarrot",
+      "api_key": "",
+      "ad_unit_id": ""
+    },
+    {
+      "enabled": true,
+      "priority": 0,
+      "ad_network": "InMobi",
+      "library_class_name": "com.inmobi.sdk.InMobiSdk",
+      "class_name": "net.texsoftware.adservelibrary.ads.nativ.NativeAdInMobi",
+      "ad_unit_id": ""
+    }
+  ]
+}

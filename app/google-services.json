@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1005358908239",
+    "firebase_url": "https://adserve-f2d46.firebaseio.com",
+    "project_id": "adserve-f2d46",
+    "storage_bucket": "adserve-f2d46.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1005358908239:android:2e1e54154b92e510",
+        "android_client_info": {
+          "package_name": "net.texsoftware.adserve"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1005358908239-58a1iv6t0a1knegg0j3hkes7a3dedf03.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "net.texsoftware.adserve",
+            "certificate_hash": "480AF1009D41E8E47DFF958572CC02DEA4A6A667"
+          }
+        },
+        {
+          "client_id": "1005358908239-cg3jmkpg2hqguoolmeiect9ceqbppf5l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyArIJOlWkyQOU19fXlC72X1uGygBAcSjcM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1005358908239-cg3jmkpg2hqguoolmeiect9ceqbppf5l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

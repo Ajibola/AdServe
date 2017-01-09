@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/adLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/txtHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:gravity="center"
+        android:padding="16dp"
+        android:text="NATIVE ADS"
+        android:textColor="@android:color/black"
+        android:textSize="38sp" />
+
+    <Button
+        android:id="@+id/btnLoadAd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtHeader"
+        android:layout_centerHorizontal="true"
+        android:padding="20dp"
+        android:text="LOAD NEXT AD"
+        android:textSize="28dp" />
+
+    <LinearLayout
+        android:id="@+id/nativeAdLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnLoadAd"
+        android:layout_marginTop="36dp"
+        android:orientation="vertical"></LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,58 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: "com.jfrog.bintray"
+
+ext {
+    bintrayRepo = 'maven'
+    bintrayName = 'adserve-lib'
+
+    publishedGroupId = 'net.texsoftware.adservelibrary'
+    libraryName = 'AdServe'
+    artifact = 'adserve-lib'
+
+    libraryDescription = 'The lightweight ad library that implements over a dozen other libraries'
+
+    siteUrl = 'https://github.com/Ajibola/AdServe'
+    gitUrl = 'https://github.com/Ajibola/AdServe.git'
+
+    libraryVersion = '0.0.1'
+
+    developerId = 'ajibola'
+    developerName = 'Ajibola Aiyedogbon'
+    developerEmail = 'ajibolaaiyedogbon@gmail.com'
+
+    licenseName = 'The GNU GPL, Version 3.0'
+    licenseUrl = 'https://www.gnu.org/licenses/gpl-3.0.en.html'
+    allLicenses = ["GNU-GPL-3.0"]
+}
+
+repositories {
+    maven { url "http://ampiri.bintray.com/maven" }
+}
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion "24.0.1"
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 24
+        versionCode 1
+        versionName "0.0.1"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+}
+
+dependencies {
+    compile project(":adlibraries")
+    compile 'com.google.code.gson:gson:2.6.1'
+}
+
+apply from: 'https://raw.githubusercontent.com/Ajibola/JCenter/master/installv1.gradle'
+apply from: 'https://raw.githubusercontent.com/Ajibola/JCenter/master/bintrayv1.gradle'
