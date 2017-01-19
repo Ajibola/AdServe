@@ -8,22 +8,23 @@ A simple mobile advertising waterfall library for Android Apps with analytics li
 What ad network sdks are implemented
 -------------------
 
-AdColony			-	com.adcolony:sdk:3.0.5
-Ampiri				-	com.ampiri.sdk:ampiri-sdk:3.4.0
-Audience Network	- 	com.facebook.android:audience-network-sdk:4.18.0
-Aerserve 			- 	aerserv-sdk.jar
-Applovin			-	applovin-sdk-6.4.0.jar
-Heyzap				-	heyzap-unified-platform-10.2.0.jar
-Ogury				-	presage-lib-1.8.1.jar 
-RevMob				-	revmob.jar
-StartApp			-	StartAppInApp-3.5.3.jar
-Vungle				-	vungle-publisher-adaptive-id-4.0.3.jar
-Avocarrot			-	com.avocarrot:android-sdk:3.7.+
-Twitter MoPub		- 	com.mopub:mopub-sdk:4.11.0@aar
-LoopMe				- 	com.loopme:loopme-sdk:5.0@aar
-SuperSonic			- 	com.supersonic.sdk:mediationsdk:6.4.19@jar
-InMobi				-	com.inmobi.monetization:inmobi-ads:6.0.3
-Yahoo Flurry				-	com.flurry.android:ads:6.7.0
+AdColony			-	com.adcolony:sdk:3.0.5  
+Ampiri				-	com.ampiri.sdk:ampiri-sdk:3.4.0  
+Audience Network	- 	com.facebook.android:audience-network-sdk:4.18.0  
+Aerserve 			- 	aerserv-sdk.jar  
+Applovin			-	applovin-sdk-6.4.0.jar  
+Heyzap				-	heyzap-unified-platform-10.2.0.jar  
+Ogury				-	presage-lib-1.8.1.jar  
+RevMob				-	revmob.jar  
+StartApp			-	StartAppInApp-3.5.3.jar  
+Vungle				-	vungle-publisher-adaptive-id-4.0.3.jar  
+Avocarrot			-	com.avocarrot:android-sdk:3.7.+  
+Twitter MoPub		- 	com.mopub:mopub-sdk:4.11.0@aar  
+LoopMe				- 	com.loopme:loopme-sdk:5.0@aar  
+SuperSonic			- 	com.supersonic.sdk:mediationsdk:6.4.19@jar  
+InMobi				-	com.inmobi.monetization:inmobi-ads:6.0.3  
+Yahoo Flurry				-	com.flurry.android:ads:6.7.0  
+
 
 Download
 --------
