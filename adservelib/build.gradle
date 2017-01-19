@@ -3,7 +3,7 @@ apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: "com.jfrog.bintray"
 
 ext {
-    bintrayRepo = 'maven'
+    bintrayRepo = 'AdServe'
     bintrayName = 'adserve-lib'
 
     publishedGroupId = 'net.texsoftware.adservelibrary'
@@ -23,7 +23,7 @@ ext {
 
     licenseName = 'The GNU GPL, Version 3.0'
     licenseUrl = 'https://www.gnu.org/licenses/gpl-3.0.en.html'
-    allLicenses = ["GNU-GPL-3.0"]
+    allLicenses = ["GPL-3.0"]
 }
 
 repositories {

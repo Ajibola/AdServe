@@ -55,8 +55,6 @@ public class NativeAdMopub extends NativeAd implements com.mopub.nativeads.MoPub
         com.mopub.nativeads.MoPubStaticNativeAdRenderer moPubStaticNativeAdRenderer = new com.mopub.nativeads.MoPubStaticNativeAdRenderer(viewBinder);
         moPubNative.registerAdRenderer(moPubStaticNativeAdRenderer);
 
-
-
         viewLayout = nativeAdMopub.createAdView(activity, null);
         nativeAdMopub.renderAdView(viewLayout);
         nativeAdMopub.prepare(viewLayout);

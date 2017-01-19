@@ -479,20 +479,6 @@ public final class Util {
         return (int) TypedValue.applyDimension(unit, size, metrics);
     }
 
-    public static String getMD5Hash(String plaintext) {
-
-        MD5 md5 = new MD5();
-        try {
-            md5.Update(plaintext, "iso-8859-1");
-        } catch (UnsupportedEncodingException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-        plaintext = md5.asHex();
-
-        return plaintext;
-    }
-
     public static String readResourceFile(Context context, String fileName) {
         try {
             BufferedReader reader = new BufferedReader(
