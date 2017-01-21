@@ -29,7 +29,7 @@ public class NativeAdMopub extends NativeAd implements com.mopub.nativeads.MoPub
     }
 
     public void initNativeAd() {
-        moPubNative = new com.mopub.nativeads.MoPubNative(activity, adNetwork.getAd_unit_id(), this);
+        moPubNative = new com.mopub.nativeads.MoPubNative(activity, "11a17b188668469fb0412708c3d16813", this);
         moPubNative.makeRequest();
     }
 

@@ -31,7 +31,9 @@ Download
 
 Gradle:
 ```groovy
-compile 'net.texsoftware.adservelibrary:adserve-lib:0.0.1'
+    compile('net.texsoftware.adservelibrary:adservelib:0.0.2@aar') {
+        transitive = true;
+    }
 ```
 
 

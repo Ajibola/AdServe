@@ -32,7 +32,7 @@ public class BannerActivity extends AppCompatActivity {
         adLayout = (FrameLayout) findViewById(R.id.adLayout);
         txtHeader = (TextView) findViewById(R.id.txtHeader);
 
-        adManager = new AdManager(thisObj, AppAnalytics.getInstance(), "ad_networks.json");
+        adManager = new AdManager(thisObj, AppAnalytics.getInstance(), "ad_networks.json", true);
         bannerAdRequestListener = new BannerAdRequestListener() {
             @Override
             public void onBannerRequestSuccess() {

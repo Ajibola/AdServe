@@ -34,7 +34,7 @@ public class InterstitialActivity extends AppCompatActivity {
         adLayout = (RelativeLayout) findViewById(R.id.adLayout);
         txtHeader = (TextView) findViewById(R.id.txtHeader);
 
-        adManager = new AdManager(thisObj, AppAnalytics.getInstance(), "ad_networks.json");
+        adManager = new AdManager(thisObj, AppAnalytics.getInstance(), "ad_networks.json", true);
 
         btnLoadAd = (Button) findViewById(R.id.btnLoadAd);
         btnLoadAd.setOnClickListener(new View.OnClickListener() {

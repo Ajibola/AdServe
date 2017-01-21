@@ -52,7 +52,7 @@ public class VideoActivity extends AppCompatActivity {
             }
         });
 
-        adManager = new AdManager(thisObj, AppAnalytics.getInstance(), "ad_networks.json");
+        adManager = new AdManager(thisObj, AppAnalytics.getInstance(), "ad_networks.json", true);
         adRequestListener = new VideoAdRequestListener() {
             @Override
             public void onVideoRequestSuccess() {

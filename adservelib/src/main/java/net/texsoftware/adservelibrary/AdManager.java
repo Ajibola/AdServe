@@ -23,6 +23,7 @@ import net.texsoftware.adservelibrary.utils.Logger;
 import net.texsoftware.adservelibrary.utils.Util;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.lang.reflect.Constructor;
@@ -47,12 +48,59 @@ public final class AdManager {
     public static List<VideoInterstitialAdNetwork> videoInterstitialAdNetworks = new ArrayList<VideoInterstitialAdNetwork>();
     public static List<NativeAdNetwork> nativeAdNetworks = new ArrayList<NativeAdNetwork>();
 
-    public AdManager(final Activity activity, Analytics analytics, String fileName) {
-        loadAdNetworks(activity, fileName);
+    public AdManager(final Activity activity, Analytics analytics, String adNetworks) {
+        loadAdNetworks(activity, adNetworks);
         analyticsProvider = analytics;
     }
 
-    public static void initSDKs(List<SDKNetwork> adSDKs, Activity activity) {
+    /**
+     * Load Ad Networks from a json file. A helper method for loading from files stored in assets folder     *
+     *
+     * @param activity
+     * @param analytics
+     * @param fileName
+     * @param loadAdNetworks
+     */
+    public AdManager(final Activity activity, Analytics analytics, String fileName, boolean loadAdNetworks) {
+        String adNetworkJSON = Util.readResourceFile(activity, fileName);
+        loadAdNetworks(activity, adNetworkJSON);
+        analyticsProvider = analytics;
+    }
+
+    /**
+     * Load Adnetworks from a JSON Object
+     *
+     * @param activity
+     * @param adNetworksJSON a string of the adnetworks to be parsed
+     */
+    public void loadAdNetworks(Activity activity, String adNetworksJSON) {
+        try {
+
+            JSONObject dataJSON = new JSONObject(adNetworksJSON);
+            JSONArray sdkNetworksArrStr = dataJSON.getJSONArray("ad_networks");
+            JSONArray bannerAdsArrStr = dataJSON.getJSONArray("banner_ads");
+            JSONArray interstitialAdsArrStr = dataJSON.getJSONArray("interstitial_ads");
+            JSONArray videoInterstitialAdsArrStr = dataJSON.getJSONArray("video_interstitial_ads");
+            JSONArray nativeAdsArrStr = dataJSON.getJSONArray("native_ads");
+
+            Gson gson = new Gson();
+            SDKNetwork[] sdkNetworksArr = gson.fromJson(sdkNetworksArrStr.toString(), SDKNetwork[].class);
+            BannerAdNetwork[] bannerAdsArr = gson.fromJson(bannerAdsArrStr.toString(), BannerAdNetwork[].class);
+            InterstitialAdNetwork[] interstitialAdsArr = gson.fromJson(interstitialAdsArrStr.toString(), InterstitialAdNetwork[].class);
+            VideoInterstitialAdNetwork[] videoInterstitialAdsArr = gson.fromJson(videoInterstitialAdsArrStr.toString(), VideoInterstitialAdNetwork[].class);
+            NativeAdNetwork[] nativeAdsArr = gson.fromJson(nativeAdsArrStr.toString(), NativeAdNetwork[].class);
+
+            initSDKs(Arrays.asList(sdkNetworksArr), activity);
+            bannerAdNetworks = Arrays.asList(bannerAdsArr);
+            interstitialAdNetworks = Arrays.asList(interstitialAdsArr);
+            videoInterstitialAdNetworks = Arrays.asList(videoInterstitialAdsArr);
+            nativeAdNetworks = Arrays.asList(nativeAdsArr);
+        } catch (Exception ex) {
+            Logger.err(ex);
+        }
+    }
+
+    public void initSDKs(List<SDKNetwork> adSDKs, Activity activity) {
         try {
             for (int i = 0; i < adSDKs.size(); i++) {
                 AdNetwork adNetwork = adSDKs.get(i);
@@ -151,34 +199,6 @@ public final class AdManager {
         }
     }
 
-    public static void loadAdNetworks(Activity activity, String fileName) {
-        try {
-            String adNetworkJSON = Util.readResourceFile(activity, fileName);
-
-            JSONObject dataJSON = new JSONObject(adNetworkJSON);
-            JSONArray sdkNetworksArrStr = dataJSON.getJSONArray("ad_networks");
-            JSONArray bannerAdsArrStr = dataJSON.getJSONArray("banner_ads");
-            JSONArray interstitialAdsArrStr = dataJSON.getJSONArray("interstitial_ads");
-            JSONArray videoInterstitialAdsArrStr = dataJSON.getJSONArray("video_interstitial_ads");
-            JSONArray nativeAdsArrStr = dataJSON.getJSONArray("native_ads");
-
-            Gson gson = new Gson();
-            SDKNetwork[] sdkNetworksArr = gson.fromJson(sdkNetworksArrStr.toString(), SDKNetwork[].class);
-            BannerAdNetwork[] bannerAdsArr = gson.fromJson(bannerAdsArrStr.toString(), BannerAdNetwork[].class);
-            InterstitialAdNetwork[] interstitialAdsArr = gson.fromJson(interstitialAdsArrStr.toString(), InterstitialAdNetwork[].class);
-            VideoInterstitialAdNetwork[] videoInterstitialAdsArr = gson.fromJson(videoInterstitialAdsArrStr.toString(), VideoInterstitialAdNetwork[].class);
-            NativeAdNetwork[] nativeAdsArr = gson.fromJson(nativeAdsArrStr.toString(), NativeAdNetwork[].class);
-
-            initSDKs(Arrays.asList(sdkNetworksArr), activity);
-            bannerAdNetworks = Arrays.asList(bannerAdsArr);
-            interstitialAdNetworks = Arrays.asList(interstitialAdsArr);
-            videoInterstitialAdNetworks = Arrays.asList(videoInterstitialAdsArr);
-            nativeAdNetworks = Arrays.asList(nativeAdsArr);
-        } catch (Exception ex) {
-            Logger.err(ex);
-        }
-    }
-
     public NativeAd loadNativeAd(Activity activity, NativeAdRequestListener nativeAdRequestListener) {
         NativeAd nativeAd = null;
         try {
@@ -188,7 +208,7 @@ public final class AdManager {
                 if (!Util.isClassAvailable(nativeAdNetwork.getLibrary_class_name()))
                     return null;
 
-                    Class<?> objClass = Class.forName(nativeAdNetwork.getClass_name());
+                Class<?> objClass = Class.forName(nativeAdNetwork.getClass_name());
                 Constructor<?> constructor = objClass.getConstructor(Activity.class, NativeAdNetwork.class);
                 nativeAd = (NativeAd) constructor.newInstance(activity, nativeAdNetwork);
                 nativeAd.setNativeAdRequestListener(nativeAdRequestListener);
