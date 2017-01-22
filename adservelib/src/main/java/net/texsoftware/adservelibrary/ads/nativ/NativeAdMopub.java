@@ -10,8 +10,6 @@ import net.texsoftware.adservelibrary.R;
 import net.texsoftware.adservelibrary.data.NativeAdNetwork;
 import net.texsoftware.adservelibrary.data.NativeAdObject;
 
-import java.util.List;
-
 
 /**
  * Created by Jibola on 10/6/2015.
@@ -29,44 +27,47 @@ public class NativeAdMopub extends NativeAd implements com.mopub.nativeads.MoPub
     }
 
     public void initNativeAd() {
-        moPubNative = new com.mopub.nativeads.MoPubNative(activity, "11a17b188668469fb0412708c3d16813", this);
+        moPubNative = new com.mopub.nativeads.MoPubNative(activity, adNetwork.getAd_unit_id(), this);
+        com.mopub.nativeads.ViewBinder viewBinder = new com.mopub.nativeads.ViewBinder.Builder(R.layout.native_ad)
+                .mainImageId(R.id.mainImage)
+                .iconImageId(R.id.imgAdChoices)
+                .titleId(R.id.txtTitle)
+                .textId(R.id.txtSummary)
+                .build();
+        com.mopub.nativeads.MoPubStaticNativeAdRenderer moPubStaticNativeAdRenderer = new com.mopub.nativeads.MoPubStaticNativeAdRenderer(viewBinder);
+        moPubNative.registerAdRenderer(moPubStaticNativeAdRenderer);
         moPubNative.makeRequest();
     }
 
     @Override
     public View getNativeAd() throws Exception {
-        if (adView == null) {
-            adView = nativeAdMopub.createAdView(activity, null);
-            nativeAdMopub.renderAdView(adView);
-            nativeAdMopub.prepare(adView);
-        }
+        adView = nativeAdMopub.createAdView(activity, null);
+        nativeAdMopub.renderAdView(adView);
+        nativeAdMopub.prepare(adView);
         return adView;
     }
 
+    @Override
     public void getNativeAd(View viewLayout, TextView txtTitle, TextView txtSummary, ImageView imgMain, ImageView imgIcon, LinearLayout adChoicesLayout, TextView txtAttribution) {
-        com.mopub.nativeads.ViewBinder viewBinder = new com.mopub.nativeads.ViewBinder.Builder(viewLayout.getId())
-                .mainImageId(imgMain.getId())
-                .iconImageId(imgIcon.getId())
-                .titleId(txtTitle.getId())
-                .textId(txtSummary.getId())
-                .privacyInformationIconImageId(adChoicesLayout.getId())
-                .build();
+        adView = nativeAdMopub.createAdView(activity, null);
 
-        com.mopub.nativeads.MoPubStaticNativeAdRenderer moPubStaticNativeAdRenderer = new com.mopub.nativeads.MoPubStaticNativeAdRenderer(viewBinder);
-        moPubNative.registerAdRenderer(moPubStaticNativeAdRenderer);
+        txtTitle = (TextView) adView.findViewById(R.id.txtTitle);
+        txtSummary = (TextView) adView.findViewById(R.id.txtSummary);
+        imgMain = (ImageView) adView.findViewById(R.id.mainImage);
+        imgIcon = (ImageView) adView.findViewById(R.id.imgAdChoices);
 
-        viewLayout = nativeAdMopub.createAdView(activity, null);
         nativeAdMopub.renderAdView(viewLayout);
+        txtTitle.setText(txtTitle.getText() + " " + txtSummary.getText());
+
         nativeAdMopub.prepare(viewLayout);
     }
 
     public View getMediaView() {
         com.mopub.nativeads.MediaViewBinder mediaViewBinder = new com.mopub.nativeads.MediaViewBinder.Builder(R.layout.native_ad)
                 .mediaLayoutId(R.id.mainImage)
-                .iconImageId(R.id.iconImage)
+                .iconImageId(R.id.imgAdChoices)
                 .titleId(R.id.txtTitle)
                 .textId(R.id.txtSummary)
-                .privacyInformationIconImageId(R.id.imgAdChoices)
                 .build();
 
         com.mopub.nativeads.MoPubVideoNativeAdRenderer moPubVideoNativeAdRenderer = new com.mopub.nativeads.MoPubVideoNativeAdRenderer(mediaViewBinder);
@@ -80,10 +81,13 @@ public class NativeAdMopub extends NativeAd implements com.mopub.nativeads.MoPub
     }
 
     public void registerView(View view) {
+        if (nativeAdMopub != null)
+            nativeAdMopub.prepare(view);
     }
 
     public void unregisterView(View view) {
-
+        if (nativeAdMopub != null)
+            nativeAdMopub.clear(view);
     }
 
     public NativeAdObject getNativeAdObject() {

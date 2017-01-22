@@ -70,7 +70,7 @@ public abstract class NativeAd {
 
     public abstract View getNativeAd() throws Exception;
 
-    public void getNativeAd(TextView txtTitle, TextView txtSummary, ImageView imgMain, ImageView imgIcon, LinearLayout adChoicesLayout, TextView txtAttribution) {
+    public void getNativeAd(View viewLayout, TextView txtTitle, TextView txtSummary, ImageView imgMain, ImageView imgIcon, LinearLayout adChoicesLayout, TextView txtAttribution) {
     }
 
     public abstract View getMediaView() throws Exception;

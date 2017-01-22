@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import net.texsoftware.adservelibrary.AdManager;
 import net.texsoftware.adservelibrary.ads.nativ.NativeAd;
+import net.texsoftware.adservelibrary.component.NativeAdViewItem;
 import net.texsoftware.adservelibrary.data.NativeAdNetwork;
 import net.texsoftware.adservelibrary.listeners.NativeAdRequestListener;
 
@@ -67,6 +68,15 @@ public class NativeActivity extends AppCompatActivity {
                             nativeAdLayout.removeAllViews();
                             if (nativeAd != null) {
                                 nativeAdLayout.addView(nativeAd.getNativeAd());
+
+                                /**
+                                 *
+                                 * NativeAdViewItem nativeAdViewItem = new NativeAdViewItem(NativeActivity.this);
+
+                                 nativeAd.getNativeAd(nativeAdViewItem, nativeAdViewItem.txtTitle, nativeAdViewItem.txtSummary, nativeAdViewItem.mainImage, nativeAdViewItem.imgAdChoices,
+                                 nativeAdViewItem.adChoicesLayout, nativeAdViewItem.txtSponsored);
+                                 nativeAdLayout.addView(nativeAdViewItem);
+                                 */
                             }
                         } catch (Exception e) {
                             e.printStackTrace();

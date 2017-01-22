@@ -46,6 +46,10 @@
             android:name="com.aerserv.sdk.view.ASVastInterstitialActivity"
             android:configChanges="keyboardHidden|orientation|screenSize" />
 
+        <activity
+            android:name="com.aerserv.sdk.view.ASWebviewInterstitialActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+
 
         <!-- Google -->
         <activity

@@ -16,7 +16,6 @@ import net.texsoftware.adservelibrary.utils.Logger;
 
 import java.net.URL;
 
-
 /**
  * Created by Jibola on 4/7/2015.
  */
@@ -55,7 +54,7 @@ public class NativeAdViewItem extends LinearLayout {
         this.nativeAd = nativeAd;
 
         if (nativeAd != null) {
-            txtTitle.setText(nativeAd.getTitle());
+            txtTitle.setText(nativeAd.getTitle() + " " + nativeAd.getDescription());
             txtSummary.setText(nativeAd.getDescription());
 
             final Handler handler = new Handler();
@@ -88,8 +87,9 @@ public class NativeAdViewItem extends LinearLayout {
             adChoicesLayout = (LinearLayout) findViewById(R.id.adChoicesLayout);
 
             if (nativeAd != null) {
-                txtTitle.setText(nativeAd.getTitle());
+                txtTitle.setText(nativeAd.getTitle() + " " + nativeAd.getDescription());
                 txtSummary.setText(nativeAd.getDescription());
+                mainImage.setVisibility(GONE);
 
                 final Runnable runnable = new Runnable() {
                     public void run() {
@@ -101,6 +101,7 @@ public class NativeAdViewItem extends LinearLayout {
                                 @Override
                                 public void run() {
                                     mainImage.setImageBitmap(bmp);
+                                    mainImage.setVisibility(VISIBLE);
                                 }
                             });
                         } catch (Exception e) {
@@ -109,6 +110,25 @@ public class NativeAdViewItem extends LinearLayout {
                     }
                 };
                 new Thread(runnable).start();
+
+                final Runnable runnable1 = new Runnable() {
+                    public void run() {
+                        URL url = null;
+                        try {
+                            url = new URL(nativeAd.getIcon_url());
+                            final Bitmap bmp = BitmapFactory.decodeStream(url.openConnection().getInputStream());
+                            imgAdChoices.post(new Runnable() {
+                                @Override
+                                public void run() {
+                                    imgAdChoices.setImageBitmap(bmp);
+                                }
+                            });
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                };
+                new Thread(runnable1).start();
             }
 
             setFocusable(true);

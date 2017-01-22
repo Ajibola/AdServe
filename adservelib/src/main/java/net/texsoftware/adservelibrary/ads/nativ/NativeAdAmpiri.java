@@ -1,13 +1,15 @@
 package net.texsoftware.adservelibrary.ads.nativ;
 
 import android.app.Activity;
+import android.support.annotation.NonNull;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.ampiri.sdk.banner.FeedCardNativeAdView;
 import com.ampiri.sdk.banner.NativeAdView;
+import com.ampiri.sdk.banner.StoryCardNativeAdView;
+import com.ampiri.sdk.banner.StreamAdAdapter;
 
 import net.texsoftware.adservelibrary.component.NativeAdViewItem;
 import net.texsoftware.adservelibrary.data.NativeAdNetwork;
@@ -20,7 +22,7 @@ public class NativeAdAmpiri extends NativeAd implements com.ampiri.sdk.listeners
 
     View adView = null;
     com.ampiri.sdk.banner.NativeAd nativeAd;
-    NativeAdView nativeAdView = null;
+    com.ampiri.sdk.banner.NativeAdView nativeAdView = null;
     Activity activity;
 
     public NativeAdAmpiri(Activity activity, NativeAdNetwork nativeAdNetwork) {
@@ -29,31 +31,37 @@ public class NativeAdAmpiri extends NativeAd implements com.ampiri.sdk.listeners
     }
 
     public void initNativeAd() {
-        nativeAdView = new NativeAdView(activity);
+        nativeAdView = new com.ampiri.sdk.banner.NativeAdView(activity);
         nativeAd = new com.ampiri.sdk.banner.NativeAd.Builder()
                 .setAdUnitId(adNetwork.getAd_unit_id())
-                .setAdViewBuilder(FeedCardNativeAdView.BUILDER)
                 .setAdView(nativeAdView)
                 .setCallback(this)
                 .build(activity);
-
         nativeAd.loadAd();
     }
 
     @Override
     public View getNativeAd() throws Exception {
-        nativeAdView = nativeAd.renderAdView();
-        return nativeAdView;
+        NativeAdViewItem nativeAdViewItem = new NativeAdViewItem(activity);
+        nativeAdView.setTitleView(nativeAdViewItem.txtTitle);
+        nativeAdView.setTextView(nativeAdViewItem.txtSummary);
+        nativeAdView.setCoverImageView(nativeAdViewItem.mainImage);
+        nativeAdView.setIconView(nativeAdViewItem.imgAdChoices);
+        nativeAd.renderAdView(nativeAdView);
+
+        nativeAdViewItem.txtTitle.setText(nativeAdViewItem.txtTitle.getText() + " " + nativeAdViewItem.txtSummary.getText());
+        return nativeAdViewItem;
     }
 
     @Override
-    public void getNativeAd(TextView txtTitle, TextView txtSummary, ImageView imgMain, ImageView imgIcon, LinearLayout adChoicesLayout, TextView txtAttribution) {
-        nativeAd.renderAdView().setTitleView(txtTitle);
-        nativeAd.renderAdView().setTextView(txtSummary);
-        nativeAd.renderAdView().setCoverImageView(imgMain);
-        nativeAd.renderAdView().setIconView(imgIcon);
-        nativeAd.renderAdView().setAdChoiceContainerView(adChoicesLayout);
-        nativeAd.renderAdView().setAdAttributionView(txtAttribution);
+    public void getNativeAd(View viewLayout, TextView txtTitle, TextView txtSummary, ImageView imgMain, ImageView imgIcon, LinearLayout adChoicesLayout, TextView txtAttribution) {
+        nativeAdView.setTitleView(txtTitle);
+        nativeAdView.setTextView(txtSummary);
+        nativeAdView.setCoverImageView(imgMain);
+        nativeAdView.setIconView(imgIcon);
+
+        nativeAd.renderAdView(nativeAdView);
+        txtTitle.setText(txtTitle.getText() + " " + txtSummary.getText());
     }
 
     @Override

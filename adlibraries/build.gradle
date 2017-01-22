@@ -3,6 +3,7 @@ apply plugin: 'com.android.library'
 
 repositories {
     maven { url "http://ampiri.bintray.com/maven" }
+    maven { url "https://jitpack.io" }
     flatDir {
         dirs 'libs'
     }
@@ -49,6 +50,7 @@ dependencies {
         transitive = true
     }
 
+    //compile 'com.github.jOOQ:jOOR:version-0.9.6'
     compile 'com.loopme:loopme-sdk:5.0@aar'
     compile 'com.supersonic.sdk:mediationsdk:6.4.19@jar'
     compile 'com.android.support:multidex:1.0.1'
