@@ -21,8 +21,8 @@ import java.net.URL;
  */
 public class NativeAdViewItem extends LinearLayout {
 
-    public ImageView mainImage;
-    public ImageView imgAdChoices;
+    public ImageView imgView;
+    public ImageView imgIcon;
     public LinearLayout adChoicesLayout;
     public TextView txtSponsored;
     public TextView txtTitle;
@@ -64,7 +64,7 @@ public class NativeAdViewItem extends LinearLayout {
                     try {
                         url = new URL(nativeAd.getImage_url());
                         Bitmap bmp = BitmapFactory.decodeStream(url.openConnection().getInputStream());
-                        mainImage.setImageBitmap(bmp);
+                        imgView.setImageBitmap(bmp);
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
@@ -79,8 +79,8 @@ public class NativeAdViewItem extends LinearLayout {
             LayoutInflater inflater = LayoutInflater.from(context);
             inflater.inflate(R.layout.native_ad, this);
 
-            mainImage = (ImageView) findViewById(R.id.mainImage);
-            imgAdChoices = (ImageView) findViewById(R.id.imgAdChoices);
+            imgView = (ImageView) findViewById(R.id.imgView);
+            imgIcon = (ImageView) findViewById(R.id.imgIcon);
             txtSponsored = (TextView) findViewById(R.id.txtSponsored);
             txtTitle = (TextView) findViewById(R.id.txtTitle);
             txtSummary = (TextView) findViewById(R.id.txtSummary);
@@ -89,7 +89,7 @@ public class NativeAdViewItem extends LinearLayout {
             if (nativeAd != null) {
                 txtTitle.setText(nativeAd.getTitle() + " " + nativeAd.getDescription());
                 txtSummary.setText(nativeAd.getDescription());
-                mainImage.setVisibility(GONE);
+                imgView.setVisibility(GONE);
 
                 final Runnable runnable = new Runnable() {
                     public void run() {
@@ -97,11 +97,11 @@ public class NativeAdViewItem extends LinearLayout {
                         try {
                             url = new URL(nativeAd.getImage_url());
                             final Bitmap bmp = BitmapFactory.decodeStream(url.openConnection().getInputStream());
-                            mainImage.post(new Runnable() {
+                            imgView.post(new Runnable() {
                                 @Override
                                 public void run() {
-                                    mainImage.setImageBitmap(bmp);
-                                    mainImage.setVisibility(VISIBLE);
+                                    imgView.setImageBitmap(bmp);
+                                    imgView.setVisibility(VISIBLE);
                                 }
                             });
                         } catch (Exception e) {
@@ -117,10 +117,10 @@ public class NativeAdViewItem extends LinearLayout {
                         try {
                             url = new URL(nativeAd.getIcon_url());
                             final Bitmap bmp = BitmapFactory.decodeStream(url.openConnection().getInputStream());
-                            imgAdChoices.post(new Runnable() {
+                            imgIcon.post(new Runnable() {
                                 @Override
                                 public void run() {
-                                    imgAdChoices.setImageBitmap(bmp);
+                                    imgIcon.setImageBitmap(bmp);
                                 }
                             });
                         } catch (Exception e) {

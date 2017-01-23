@@ -29,8 +29,8 @@ public class NativeAdMopub extends NativeAd implements com.mopub.nativeads.MoPub
     public void initNativeAd() {
         moPubNative = new com.mopub.nativeads.MoPubNative(activity, adNetwork.getAd_unit_id(), this);
         com.mopub.nativeads.ViewBinder viewBinder = new com.mopub.nativeads.ViewBinder.Builder(R.layout.native_ad)
-                .mainImageId(R.id.mainImage)
-                .iconImageId(R.id.imgAdChoices)
+                .mainImageId(R.id.imgView)
+                .iconImageId(R.id.imgIcon)
                 .titleId(R.id.txtTitle)
                 .textId(R.id.txtSummary)
                 .build();
@@ -53,8 +53,8 @@ public class NativeAdMopub extends NativeAd implements com.mopub.nativeads.MoPub
 
         txtTitle = (TextView) adView.findViewById(R.id.txtTitle);
         txtSummary = (TextView) adView.findViewById(R.id.txtSummary);
-        imgMain = (ImageView) adView.findViewById(R.id.mainImage);
-        imgIcon = (ImageView) adView.findViewById(R.id.imgAdChoices);
+        imgMain = (ImageView) adView.findViewById(R.id.imgView);
+        imgIcon = (ImageView) adView.findViewById(R.id.imgIcon);
 
         nativeAdMopub.renderAdView(viewLayout);
         txtTitle.setText(txtTitle.getText() + " " + txtSummary.getText());
@@ -64,8 +64,8 @@ public class NativeAdMopub extends NativeAd implements com.mopub.nativeads.MoPub
 
     public View getMediaView() {
         com.mopub.nativeads.MediaViewBinder mediaViewBinder = new com.mopub.nativeads.MediaViewBinder.Builder(R.layout.native_ad)
-                .mediaLayoutId(R.id.mainImage)
-                .iconImageId(R.id.imgAdChoices)
+                .mediaLayoutId(R.id.imgView)
+                .iconImageId(R.id.imgIcon)
                 .titleId(R.id.txtTitle)
                 .textId(R.id.txtSummary)
                 .build();

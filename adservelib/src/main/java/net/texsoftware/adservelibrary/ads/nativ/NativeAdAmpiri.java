@@ -45,8 +45,8 @@ public class NativeAdAmpiri extends NativeAd implements com.ampiri.sdk.listeners
         NativeAdViewItem nativeAdViewItem = new NativeAdViewItem(activity);
         nativeAdView.setTitleView(nativeAdViewItem.txtTitle);
         nativeAdView.setTextView(nativeAdViewItem.txtSummary);
-        nativeAdView.setCoverImageView(nativeAdViewItem.mainImage);
-        nativeAdView.setIconView(nativeAdViewItem.imgAdChoices);
+        nativeAdView.setCoverImageView(nativeAdViewItem.imgView);
+        nativeAdView.setIconView(nativeAdViewItem.imgIcon);
         nativeAd.renderAdView(nativeAdView);
 
         nativeAdViewItem.txtTitle.setText(nativeAdViewItem.txtTitle.getText() + " " + nativeAdViewItem.txtSummary.getText());
