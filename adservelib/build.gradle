@@ -15,7 +15,7 @@ ext {
     siteUrl = 'https://github.com/Ajibola/AdServe'
     gitUrl = 'https://github.com/Ajibola/AdServe.git'
 
-    libraryVersion = '0.0.3'
+    libraryVersion = '0.0.4'
 
     developerId = 'ajibola'
     developerName = 'Ajibola Aiyedogbon'
@@ -38,7 +38,7 @@ android {
         minSdkVersion 15
         targetSdkVersion 24
         versionCode 1
-        versionName "0.0.3"
+        versionName "0.0.4"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
