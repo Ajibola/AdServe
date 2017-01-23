@@ -15,7 +15,7 @@
         android:orientation="horizontal">
 
         <ImageView
-            android:id="@+id/imgAdChoices"
+            android:id="@+id/imgIcon"
             android:layout_width="12dp"
             android:layout_height="12dp"
             android:layout_gravity="center"
@@ -69,7 +69,7 @@
                 android:textSize="14sp" />
 
             <ImageView
-                android:id="@+id/mainImage"
+                android:id="@+id/imgView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="4dp"
