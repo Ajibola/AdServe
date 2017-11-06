@@ -9,7 +9,7 @@ buildscript {
     dependencies {
         classpath 'com.android.tools.build:gradle:2.2.3'
         classpath 'com.google.gms:google-services:3.0.0'
-        classpath 'io.fabric.tools:gradle:1.22.0'
+        classpath 'io.fabric.tools:gradle:1.22.1'
 
         classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7'
         classpath 'com.github.dcendents:android-maven-gradle-plugin:1.4.1'
@@ -23,9 +23,14 @@ allprojects {
     repositories {
         jcenter()
 
+        maven {
+            url 'https://maven.google.com/'
+            name 'Google'
+        }
         maven { url "https://adcolony.bintray.com/AdColony" }
         maven { url "http://fyber.bintray.com/maven" }
         maven { url "https://s3.amazonaws.com/avocarrot-android-builds/dist" }
+        maven { url "https://s3.amazonaws.com/moat-sdk-builds" }
         maven { url "https://dl.bintray.com/supersonic/android-sdk" }
     }
 }

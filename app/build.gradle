@@ -10,10 +10,10 @@ repositories {
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "24.0.1"
+    buildToolsVersion "25.0.2"
     defaultConfig {
         applicationId "net.texsoftware.adserve"
-        minSdkVersion 15
+        minSdkVersion 16
         targetSdkVersion 22
         versionCode 1
         versionName "1.0"
@@ -37,17 +37,15 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-
     compile('com.crashlytics.sdk.android:answers:1.3.10@aar') {
         transitive = true;
     }
 
     compile project(":adservelib")
-    compile 'com.android.support:appcompat-v7:25.0.1'
+    compile 'com.android.support:appcompat-v7:25.1.0'
     compile 'com.google.firebase:firebase-core:10.0.1'
     testCompile 'junit:junit:4.12'
 }

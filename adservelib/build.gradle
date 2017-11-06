@@ -31,12 +31,12 @@ repositories {
 }
 
 android {
-    compileSdkVersion 24
-    buildToolsVersion "24.0.1"
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
 
     defaultConfig {
-        minSdkVersion 15
-        targetSdkVersion 24
+        minSdkVersion 16
+        targetSdkVersion 25
         versionCode 1
         versionName "0.0.4"
 
@@ -51,7 +51,7 @@ android {
 
 dependencies {
     compile project(":adlibraries")
-    compile 'com.google.code.gson:gson:2.6.1'
+    compile 'com.google.code.gson:gson:2.8.0'
 }
 
 apply from: 'https://raw.githubusercontent.com/Ajibola/JCenter/master/installv1.gradle'

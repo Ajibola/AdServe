@@ -11,10 +11,10 @@ repositories {
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "24.0.1"
+    buildToolsVersion "25.0.2"
 
     defaultConfig {
-        minSdkVersion 15
+        minSdkVersion 16
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
@@ -32,12 +32,12 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
 
     compile 'com.google.android.gms:play-services-ads:10.0.1'
-    compile 'com.android.support:appcompat-v7:25.0.1'
-    compile 'com.android.support:support-annotations:25.0.1'
+    compile 'com.android.support:appcompat-v7:25.1.0'
+    compile 'com.android.support:support-annotations:25.1.0'
 
     compile files('libs/aerserv-sdk.jar')
     compile files('libs/applovin-sdk-6.4.0.jar')
-    compile files('libs/presage-lib-1.8.1.jar')
+    compile files('libs/presage-lib-2.1.17-obfuscated.jar')
     compile files('libs/heyzap-unified-platform-10.2.0.jar')
     compile files('libs/StartAppInApp-3.5.3.jar')
     compile files('libs/dagger-2.7.jar')
@@ -46,19 +46,18 @@ dependencies {
     compile files('libs/revmob.jar')
 
     compile('com.avocarrot:android-sdk:3.7.+')
-    compile('com.mopub:mopub-sdk:4.11.0@aar') {
+    compile('com.mopub:mopub-sdk:4.18.0@aar') {
         transitive = true
     }
 
-    //compile 'com.github.jOOQ:jOOR:version-0.9.6'
     compile 'com.loopme:loopme-sdk:5.0@aar'
     compile 'com.supersonic.sdk:mediationsdk:6.4.19@jar'
     compile 'com.android.support:multidex:1.0.1'
     compile 'com.squareup.picasso:picasso:2.5.2'
     compile 'com.inmobi.monetization:inmobi-ads:6.0.3'
-    compile 'com.flurry.android:analytics:6.7.0'
-    compile 'com.flurry.android:ads:6.7.0'
-    compile 'com.facebook.android:audience-network-sdk:4.18.0'
-    compile 'com.adcolony:sdk:3.0.5'
+    compile 'com.flurry.android:analytics:7.0.0'
+    compile 'com.flurry.android:ads:7.0.0'
+    compile 'com.facebook.android:audience-network-sdk:4.26.1'
+    compile 'com.adcolony:sdk:3.2.1'
     compile 'com.ampiri.sdk:ampiri-sdk:3.4.0'
 }
