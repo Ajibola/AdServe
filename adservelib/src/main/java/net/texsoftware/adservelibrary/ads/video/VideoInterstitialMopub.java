@@ -71,6 +71,11 @@ public class VideoInterstitialMopub extends VideoInterstitialAd implements com.m
     }
 
     @Override
+    public void onRewardedVideoClicked(@NonNull String adUnitId) {
+        super.onClick();
+    }
+
+    @Override
     public void onRewardedVideoClosed(@NonNull String adUnitId) {
         super.onCompleted();
     }

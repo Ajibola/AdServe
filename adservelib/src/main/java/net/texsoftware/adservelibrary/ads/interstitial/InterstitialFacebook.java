@@ -7,7 +7,7 @@ import net.texsoftware.adservelibrary.data.InterstitialAdNetwork;
 /**
  * Created by Jibola on 10/6/2015.
  */
-public class InterstitialFacebook extends InterstitialAd implements com.facebook.ads.InterstitialAdListener, com.facebook.ads.ImpressionListener {
+public class InterstitialFacebook extends InterstitialAd implements com.facebook.ads.InterstitialAdListener {
 
     com.facebook.ads.InterstitialAd fbInterstitialAd;
 

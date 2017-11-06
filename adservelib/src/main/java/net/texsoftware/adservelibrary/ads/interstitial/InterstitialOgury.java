@@ -7,25 +7,25 @@ import net.texsoftware.adservelibrary.data.InterstitialAdNetwork;
 /**
  * Created by Jibola on 10/6/2015.
  */
-public class InterstitialOgury extends InterstitialAd implements io.presage.utils.IADHandler {
+public class InterstitialOgury extends InterstitialAd implements io.presage.IADHandler {
 
     public InterstitialOgury(Activity activity, InterstitialAdNetwork interstitialAdNetwork) {
         this.adNetwork = interstitialAdNetwork;
     }
 
     public void initInterstitial(Activity activity) {
-        io.presage.Presage.getInstance().loadInterstitial(this);
+        io.presage.Presage.getInstance().load(this);
     }
 
     public void showInterstitial() {
         super.showInterstitial();
 
-        if (io.presage.Presage.getInstance().isInterstitialLoaded())
-            io.presage.Presage.getInstance().showInterstitial(this);
+        if (io.presage.Presage.getInstance().canShow())
+            io.presage.Presage.getInstance().show(this);
     }
 
     public void loadInterstitial() {
-        io.presage.Presage.getInstance().loadInterstitial(this);
+        io.presage.Presage.getInstance().load(this);
     }
 
     @Override
@@ -40,17 +40,22 @@ public class InterstitialOgury extends InterstitialAd implements io.presage.util
 
     @Override
     public void onDestroy() {
-
+        io.presage.Presage.getInstance().removeListeners();
     }
 
     @Override
-    public void onAdFound() {
+    public void onAdAvailable() {
         super.onRequestSuccess();
     }
 
     @Override
-    public void onAdNotFound() {
+    public void onAdNotAvailable() {
         super.onRequestFailed();
+    }
+
+    @Override
+    public void onAdLoaded() {
+
     }
 
     @Override

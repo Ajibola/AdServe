@@ -11,7 +11,7 @@ import net.texsoftware.adservelibrary.utils.Util;
 /**
  * Created by Jibola on 10/6/2015.
  */
-public class NativeAdExGoogle extends NativeAd implements com.facebook.ads.AdListener, com.facebook.ads.ImpressionListener {
+public class NativeAdExGoogle extends NativeAd implements com.facebook.ads.AdListener {
 
     com.google.android.gms.ads.NativeExpressAdView mAdViewGoogle;
     com.google.android.gms.ads.AdRequest adRequestBanner;

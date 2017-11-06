@@ -11,7 +11,7 @@ import net.texsoftware.adservelibrary.data.NativeAdObject;
 /**
  * Created by Jibola on 10/6/2015.
  */
-public class NativeAdFacebook extends net.texsoftware.adservelibrary.ads.nativ.NativeAd implements com.facebook.ads.AdListener, com.facebook.ads.ImpressionListener {
+public class NativeAdFacebook extends net.texsoftware.adservelibrary.ads.nativ.NativeAd implements com.facebook.ads.AdListener {
 
     com.facebook.ads.NativeAd fbNativeAd;
     View adView = null;
@@ -24,7 +24,6 @@ public class NativeAdFacebook extends net.texsoftware.adservelibrary.ads.nativ.N
 
     public void initNativeAd() {
         fbNativeAd = new com.facebook.ads.NativeAd(activity, adNetwork.getAd_unit_id());
-        fbNativeAd.setImpressionListener(this);
         fbNativeAd.setAdListener(this);
         fbNativeAd.setMediaViewAutoplay(true);
         fbNativeAd.loadAd();

@@ -9,7 +9,7 @@ import net.texsoftware.adservelibrary.data.BannerAdNetwork;
 /**
  * Created by Jibola on 10/6/2015.
  */
-public class BannerFacebook extends BannerAd implements com.facebook.ads.AdListener, com.facebook.ads.ImpressionListener {
+public class BannerFacebook extends BannerAd implements com.facebook.ads.AdListener {
 
     com.facebook.ads.AdView fbAdView;
     private final Activity activity;
@@ -24,7 +24,6 @@ public class BannerFacebook extends BannerAd implements com.facebook.ads.AdListe
         //Facebook Audience Network Instantiate an AdView view
         fbAdView = new com.facebook.ads.AdView(activity, adNetwork.getAd_unit_id(), com.facebook.ads.AdSize.BANNER_HEIGHT_50);
         fbAdView.setAdListener(this);
-        fbAdView.setImpressionListener(this);
         fbAdView.loadAd();
     }
 
